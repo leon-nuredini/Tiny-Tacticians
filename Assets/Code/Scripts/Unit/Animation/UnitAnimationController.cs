@@ -32,8 +32,8 @@ public class UnitAnimationController : MonoBehaviour
         {
             _unit.OnIdle += PlayIdleAnimation;
             _unit.OnMove += PlayRunningAnimation;
-            _unit.OnAttack += PlayAttackAnimation;
-            _unit.OnDie += PlayDieAnimation;
+            _unit.OnAttack += PlayIdleAnimation;
+            //_unit.OnDie += PlayDieAnimation;
         }
     }
 
@@ -41,10 +41,10 @@ public class UnitAnimationController : MonoBehaviour
     {
         if (_unit != null)
         {
-            _unit.OnIdle -= PlayIdleAnimation;
-            _unit.OnMove -= PlayRunningAnimation;
-            _unit.OnAttack -= PlayAttackAnimation;
-            _unit.OnDie -= PlayDieAnimation;
+            _unit.OnIdle   -= PlayIdleAnimation;
+            _unit.OnMove   -= PlayRunningAnimation;
+            _unit.OnAttack -= PlayIdleAnimation;
+            //_unit.OnDie -= PlayDieAnimation;
         }
     }
 
